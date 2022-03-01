@@ -6,3 +6,10 @@
   - name: test a posix thingy
     ansible.posix.selinux:
       state: diabled
+
+  - name: show me the money
+    shell: getenforce
+    register: enforce
+
+  - name: show data
+    msg: {{ enforce }}
